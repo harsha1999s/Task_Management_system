@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style1.css"/>
+    <script src="script1.js"></script>
+    <script src="https://kit.fontawesome.com/b1c63c85c7.js" crossorigin="anonymous"></script>
+
+    <title>Sticky Notes</title>
+</head>
+<div class="error">
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+  
+   {% for message in messages %}
+    <center> <b>{{ message }}</b></center>
+   {% endfor %}
+  
+  {% endif %}
+  {% endwith %}
+  {% block body %}{% endblock %}
+  </div>  
+<body>
+    <div class="note">
+        <div class="note-header">
+          <span class="note-title">Sticky Note</span>
+          <button class="note-delete"><i class="fa-solid fa-trash"></i></i></button>
+        </div>
+        <div class="note-content">
+            <textarea class="note-textarea"></textarea>
+        </div>
+        <div class="note-info">
+          <textarea class="note-infotext"cols="29" rows="10"></textarea>
+
+        </div>
+    </div>
+      
+</body>
+</html>
+

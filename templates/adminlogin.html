@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="script.js"></script>
+        <link rel="stylesheet" href="{{url_for('static',filename='login.css')}}"/>
+        <!-- <link rel="stylesheet" href="C:\Users\DELL\Desktop\task project\static\css\login.css"> -->
+
+        <title>
+          Login page
+        </title>
+    </head>
+    <div class="error">
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+    <center><b>{{ message}} !!!</b></center>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+</div>
+<body>
+  <form method="POST">
+    <div class="page">
+    <div class="container">
+      <div class="left">
+        <div class="text">Login</div>
+       <div class="eula">
+       <a  class="account-cre"  href="{{url_for('adminregister')}}">No Account?</a><br><br>
+       <a class="forget-pass" href="{{url_for('adminforgot')}}">Forget password?</a>
+      </div>
+      </div>
+      <div class="right">
+        <div class="form">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="__________________">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="__________________">
+          <div class="sign-in-container  form-container">
+            <button id="sub" type="submit" value="Submit">submit</button>
+      </div>
+    </div>
+  </div>
+</form>
+</body>
+</html>

@@ -1,0 +1,153 @@
+/* Style the header */
+.heading {
+  padding: 0px 12px;
+  background: rgb(0,0,0,0);
+  color: #89e3b5;
+  padding-top: 0px;
+  font-size: larger;
+  font-family: Helvetica, sans-serif;
+}
+.error{
+  color: #42d488;
+}
+
+
+/* Page content */
+.content {
+  padding: 16px;
+}
+
+/* The sticky class is added to the header with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 0.5rem;
+}
+
+
+body {
+ background:linear-gradient(
+        90deg,
+        #002B5B,
+        #42d488
+    );
+font-family: Helvetica, sans-serif;
+  
+    overflow: hidden;
+    /* ocultar barra de rolagem */
+  }
+
+  label{
+    color: #41bc9f;
+    font-size: 14px;
+    text-transform: capitalize;
+    display: flex;
+    height: 1px;
+    flex-direction: column;
+    gap: 20px; 
+    font-weight:bold;
+    padding: 10px;
+    padding-top: 15px;
+  }
+  
+  .area-sign-in {
+    display: flex;
+    height: 85vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-weight: bolder;
+    text-transform: uppercase;
+  }
+  .sign-in {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #181920;
+    width: 340px;
+    height: 350px;
+    border-radius: 8px;
+    padding: 35px;
+  }
+  
+  .sign-in form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .sign-in input {
+    margin-top: 15px;
+    background-color: #252a34;
+    color: #cbd0f7;
+    border: none;
+    height: 45px;
+    padding: 0 10px;
+    outline: none;
+    border-radius: 8px;
+  }
+  
+  .sign-in img {
+    width: 65px;
+    height: auto;
+    margin-bottom: 15px;
+  }
+  
+  input::placeholder {
+    color: #cbd0f7;
+    font-size: 14px;
+    text-transform: capitalize;
+  }
+  
+  form [type="submit"] {
+    display: inline-block;
+    background-color: #26b3a2;
+    font-size: 17px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 25px 0;
+    cursor: pointer;
+  
+    opacity: 0.8;
+  }
+  
+  form [type="submit"]:hover {
+    opacity: 1;
+  }
+  
+  p {
+    color: #cbd0f7;
+  }
+  
+  p a {
+    color: #26b3a2;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  hr.new4 {
+    border: 1px solid #ffa12c;
+    width: 50%;
+  }
+
+
+  @media  (max-width:767px),(max-width:480px),(max-width:600px) {
+    .sign-in {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      
+        background-color: #181920;
+        width: 260px;
+        height: 350px;
+        border-radius: 8px;
+        padding: 35px;
+      }
+  }

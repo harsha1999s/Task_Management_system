@@ -1,0 +1,63 @@
+<!DOCTYPE html> 
+<html> 
+
+<head> 
+
+	<meta charset="utf-8"> 
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+	<title></title> 
+	<link rel="stylesheet" href="{{url_for('static',filename='emplogin.css')}}"> 
+	<!-- Favicon-->
+	<link rel="icon" type="image/x-icon" href="{{url_for('static',filename='img/Clip_img.png')}}" />
+	<!-- Google Fonts --> 
+	<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&family=Poiret+One&display=swap" rel="stylesheet"> 
+
+</head> 
+<div class="error">
+	{% with messages = get_flashed_messages() %}
+	{% if messages %}
+	
+	 {% for message in messages %}
+	  <center> <b>{{ message }}</b></center>
+	 {% endfor %}
+	
+	{% endif %}
+	{% endwith %}
+	{% block body %}{% endblock %}
+	</div>  
+<body> 
+	<div class="container-login"> 
+		<div class="wrap-login"> 
+			<form action="#" method="POST"> 
+
+				<!-- LOGO --> 
+				<span class="login-form-title">USER LOGIN</span> 
+                <link rel="icon" type="image/x-icon" href="{{url_for('static',filename='img/Clip_img.png')}}" />
+				<!--<img class="avatar"src="img/user.svg" alt="" align="center"> -->
+                 <img class="avatar"src="{{url_for('static',filename='img/Clip_img.png')}}" alt="img" align="center">
+					<!-- USER ID --> 
+				<div class="wrap-input100"> 
+					<input class="input100" type="email" name="empemail" placeholder="email">	 
+					<span class="focus-efecto"></span> 
+				</div> 
+				<!-- PASSWORD --> 
+				<div class="wrap-input100"> 
+					<input class="input100" type="password" name="emppassword" placeholder="PASSWORD"> 
+					<span class="focus-efecto"></span> 
+				</div> 
+				<!-- fogot -->
+				<a  class="forget-password"  href="{{url_for('empforgot')}}">Forget  Password?</a><br><br>
+
+				<!-- BUTTON --> 
+				<div class="container-login-form-btn"> 
+					<div class="wrap-login-form-btn"> 
+						<div class="login-form-bgbtn"></div> 
+						<button type="submit" name="btnEntrar" class="login-form-btn">ENTER</button> 
+					</div> 
+				</div> 
+			</form> 
+		</div> 
+	</div> 
+</body> 
+
+</html> 

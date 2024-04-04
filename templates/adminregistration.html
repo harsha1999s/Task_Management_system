@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+      <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+      <script src="C:\Users\DELL\Desktop\task project\static\script.js"></script>
+      <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='admin.css')}}"/>
+      <!-- Favicon-->
+      <link rel="icon" type="image/x-icon" href="{{url_for('static',filename='img/Clip_img.png')}}" />
+      <title>
+        Admin register
+      </title>
+</head>
+<div class="error">
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+
+ {% for message in messages %}
+  <center> <b>{{ message }}</b></center>
+ {% endfor %}
+
+{% endif %}
+{% endwith %}
+{% block body %}{% endblock %}
+</div>  
+
+<body>
+  <form method = 'POST'>
+    <div class="page">
+    <div class="container">
+      <div class="left">
+        <div class="text">Admin Register</div>
+        <div class="eula">
+            ONLY ADMINS CAN REGISTER
+            <a class="account-cre" href="{{url_for('adminlogin')}}">already have account?</a>
+        </div>
+      </div>
+      <div class="right">
+        <div class="form">
+          <label for="user id">User name</label>
+          <input type="text" id="userid" required placeholder="______________________________" name = "username" >
+
+          <label for="email">Email</label>
+          <input type="email" id="email"required  placeholder="_________________________" name = "email">
+
+          <label for="password">Password</label>
+          <input type="password" id="password" required placeholder="_______________________" name="password">
+
+          <div class="sign-in-container  form-container"><br><br>
+            <button id="sub" type="submit" value="Submit">Sign In</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+</body>
+</html>

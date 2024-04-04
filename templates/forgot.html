@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>OTP</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="{{url_for('static',filename='img/Clip_img.png')}}" />
+    <link rel="stylesheet" href="{{url_for('static',filename='forgot.css')}}">
+  </head>
+  <div class="error">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    
+     {% for message in messages %}
+      <center> <b>{{ message }}</b></center>
+     {% endfor %}
+    
+    {% endif %}
+    {% endwith %}
+    {% block body %}{% endblock %}
+    </div>   
+
+  <body>
+<div class="container">
+  <div class="verification-email">
+    <h1 class="verification-email__title">Enter Email Address</h1>
+    <p class="verification-email__subtitle">Please enter your email:</p>
+    <form class="verification-email__form" method="POST">
+      <input type="email" required class="verification-email__input" placeholder="Enter your email here" name = "email" />
+      <button type="submit" class="verification-email__button">Submit</button>
+    </form>
+  </div>
+</div>
+</body>
+</html>
